@@ -8,6 +8,11 @@ namespace webview2_demo
         {
             InitializeComponent();
 
+            webView2.CoreWebView2InitializationCompleted += (s, e) =>
+            {
+                webView2.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
+            };
+
             webView2.Dock = DockStyle.Fill;
 
             //webView2.Source = new Uri($"file:///{Path.GetFullPath("./sample.pdf")}#page=2");
